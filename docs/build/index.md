@@ -50,7 +50,7 @@ Pkg.add("ScientificTypes")
 ## Sample usage
 
 
-```julia-repl
+```julia
 julia> using OpenML # or using MLJ
 
 
@@ -85,7 +85,7 @@ julia> OpenML.list_tags()
 Listing all datasets with the "OpenML100" tag which also have `n` instances and `p` features, where `100 < n < 1000` and `1 < p < 10`:
 
 
-```julia-repl
+```julia
 julia> ds = OpenML.list_datasets(
                  tag = "OpenML100",
                  filter = "number_instances/100..1000/number_features/1..10",
@@ -113,7 +113,7 @@ julia> ds = OpenML.list_datasets(
 Describing and loading one of these datasets:
 
 
-```julia-repl
+```julia
 julia> OpenML.describe_dataset(15)
   Author: Dr. William H. Wolberg, University of Wisconsin Source: UCI
   (https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)),
@@ -192,7 +192,7 @@ Tables.DictColumnTable with 699 rows, 10 columns, and schema:
 Converting to a data frame:
 
 
-```julia-repl
+```julia
 julia> df = DataFrame(table)
 699×10 DataFrame
  Row │ Clump_Thickness  Cell_Size_Uniformity  Cell_Shape_Uniformity  Marginal_ ⋯
@@ -221,7 +221,7 @@ julia> df = DataFrame(table)
 Inspecting it's schema:
 
 
-```julia-repl
+```julia
 julia> using ScientificTypes
 
 
@@ -281,7 +281,7 @@ For more on the format and effect of `filters` refer to the [openml API](https:/
 
 **Examples**
 
-```
+```julia
 julia> using DataFrames
 
 julia> ds = OpenML.list_datasets(
@@ -303,7 +303,7 @@ Load and show the OpenML description of the data set `id`. Use [`list_datasets`]
 
 **Examples**
 
-```
+```julia
 julia> OpenML.describe_dataset(6)
   Author: David J. Slate Source: UCI
   (https://archive.ics.uci.edu/ml/datasets/Letter+Recognition) - 01-01-1991 Please cite: P.
